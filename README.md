@@ -26,24 +26,20 @@ num   -> 0...9 num
 
 
 FIRST SETS
------------------
 FIRST(term) = FIRST(factor) = FIRST(exp) = FIRST(final) = FIRST(num)= { (,0...9 }
 FIRST(exp2) = { +,-,ε }
 FIRST(term2) = { *,/,ε }
 
---------------------------------------------------------
 
 FOLLOW SETS
-----------------
 FOLLOW(final) = { $ }
 FOLLOW(exp) = FOLLOW(exp2) = { $,) }
 FOLLOW(tern) = FOLLOW(term2 = { +,-,ε }
 FOLLOW(factor) = { *,/,ε }
 FOLLOW(num) = { (,0...9,ε }
----------------------------------------------------------
 
 FIRST+ SETS
------------------
+
 FIRST+(final) = FIRST+(exp) = FIRST+(term) = FIRST+(factor) = { (,0...9 }
 FIRST+(exp2) = FIRST(exp2) U FOLLOW(exp2) = { +,-,$,) }
 FIRST+(term2) = FIRST(term2) U FOLLOW(term2) = { *,/,+,-,$,) }
